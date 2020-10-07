@@ -1,4 +1,4 @@
 export let people = {
-    name: 'asim',
+    name: 'Asim Hafeez',
     rollno: '066'
 }
