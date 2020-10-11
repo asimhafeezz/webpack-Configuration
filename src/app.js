@@ -1,7 +1,9 @@
 import '../css/style.css'
-import {people} from './bar'
+
+import {person} from './person'
 
 const data = document.getElementById('root')
 
-data.innerHTML = '<h1>' + people.name + '</h1>'
+data.innerHTML = '<h1>' + person.name + '</h1>'
+
 

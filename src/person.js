@@ -1,4 +1,4 @@
-export let people = {
+export let person = {
     name: 'Asim Hafeez',
     rollno: '066'
 }

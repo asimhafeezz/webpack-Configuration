@@ -4,15 +4,26 @@ module.exports = {
         path: __dirname + '/dist',
         filename: 'bundle.js'
     },
+    devServer:{
+        inline: true,
+        port: 3500
+    },
     module:{
         rules:[
             {
                 test: /\.css$/,loader: "style-loader!css-loader"
             },
             {
-                test: /\.js$/ , loader: "babel-loader" , exclude: /node-modules/ , query:{
-                    preset:['es2015']
-                }
+                test: /\.js$/,
+                exclude: '/node_modules/',
+                use:[
+                    {
+                        loader:'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env']
+                        }
+                    }
+                ]
             }
         ]
     }
