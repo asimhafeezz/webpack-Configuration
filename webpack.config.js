@@ -1,4 +1,5 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/app.js',
@@ -33,6 +34,7 @@ module.exports = {
         ]
     },
     plugins:[
-        new UglifyJsPlugin()
+        new UglifyJsPlugin(),
+        new CleanWebpackPlugin()
     ]
 }
