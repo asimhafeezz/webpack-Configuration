@@ -1,5 +1,6 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const BabiliPlugin = require('babili-webpack-plugin')
 
 module.exports = {
     entry: './src/app.js',
@@ -17,7 +18,12 @@ module.exports = {
                 test: /\.css$/,
                 use:[
                     'style-loader',    
-                    'css-loader']
+                    {
+                        loader: 'css-loader',
+                        options:{
+                            minimize: true
+                        }
+                    }]
             },
             {
                 test: /\.js$/,
@@ -34,7 +40,7 @@ module.exports = {
         ]
     },
     plugins:[
-        new UglifyJsPlugin(),
+        new BabiliPlugin(),
         new CleanWebpackPlugin()
     ]
 }
